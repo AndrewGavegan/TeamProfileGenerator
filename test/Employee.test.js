@@ -90,4 +90,4 @@ describe('Employee', () => {
             expect(results).toEqual(thisRole);
         });
     });
-})
+});
