@@ -1,5 +1,5 @@
-const { describe } = require('yargs');
-const Employee = require('./lib/Employee');
+
+const Employee = require('../lib/Employee');
 
 describe('Employee', () => {
     describe("init", () => {
@@ -52,6 +52,32 @@ describe('Employee', () => {
 
             expect(cb).toThrowError(err);
         });
-        
-    })
+    });
+    describe('getName', () => {
+        it('should return the name of the employee', () => {
+            const employee = new Employee('Peter', 1, 'peter_jacobs@gmail.com');
+            
+            const results = employee.getName();
+
+            expect(results).toEqual('Peter');
+        });
+    });
+    describe('getId', () => {
+        it('should return the Id of the employee', () => {
+            const employee = new Employee('Peter', 1, 'peter_jacobs@gmail.com');
+            
+            const results = employee.getId();
+
+            expect(results).toEqual(1);
+        });
+    });
+    describe('getEmail', () => {
+        it('should return the Email of the employee', () => {
+            const employee = new Employee('Peter', 1, 'peter_jacobs@gmail.com');
+            
+            const results = employee.getEmail();
+
+            expect(results).toEqual('peter_jacobs@gmail.com');
+        });
+    });
 })
