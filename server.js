@@ -87,5 +87,5 @@ async function furtherQuestions() {
 furtherQuestions();
 
 function generateTeam () {
-    fs.writeFileSync("dist/index.html", )
+    fs.writeFileSync("dist/index.html", createSite(teamMember));
 }
