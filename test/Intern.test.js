@@ -1,4 +1,3 @@
-const { describe } = require('yargs');
 const Intern = require('../lib/Intern');
 
 describe('Intern', () => {

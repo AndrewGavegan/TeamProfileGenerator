@@ -11,24 +11,24 @@ const Questions = async () => {
     const Member = await inquirer.prompt([
         {
             type: "input",
-            message: "What's your name?",
+            message: "Enter team members name.",
             name: "name",
           },
           {
             type: "input",
-            message: "What's your ID?",
+            message: "Enter team members ID.",
             name: "id",
           },
           {
             type: "input",
-            message: "What's your email address?",
+            message: "Enter team members email address.",
             name: "email",
           },
           {
             type: "list",
-            message: "What's your role?",
+            message: "Enter team members role",
             name: "role",
-            choices: ["Manager", "Employee", "Intern"],
+            choices: ["Manager", "Engineer", "Intern"],
           },
     ]);
 
@@ -36,7 +36,7 @@ const Questions = async () => {
         const officeNumber = await inquirer.prompt([
             {
                 type: "input",
-                message: "What's your office number",
+                message: "What is this managers office number?",
                 name: "officeNumber",
             },
         ])
@@ -47,7 +47,7 @@ const Questions = async () => {
             const GitHub = await inquirer.prompt([
                 {
                     type: "input",
-                    message: "What's your GitHub username?",
+                    message: "What is this engineers GitHub username?",
                     name: "github",
                 }
             ])
@@ -58,7 +58,7 @@ const Questions = async () => {
             const School = await inquirer.prompt([
                 {
                     type: "input",
-                    message: "What school did you attend",
+                    message: "What school did this intern attend",
                     name: "school",
                 }
             ])
@@ -74,8 +74,8 @@ async function furtherQuestions() {
     const addMember = await inquirer.prompt([
         {
             type: 'list',
-            message: 'Do you want to create a team or add a member?',
-            choices: ['Add a member', 'Create this team'],
+            message: 'Do you want to create this team as it is or add another member?',
+            choices: ['Add another member', 'Create this team'],
             name: 'addNewMember',
         }
     ])
@@ -88,4 +88,5 @@ furtherQuestions();
 
 function generateTeam () {
     fs.writeFileSync("dist/index.html", createSite(teamMember));
+    console.log("Created Team Members Page!")
 }
