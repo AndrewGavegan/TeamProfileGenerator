@@ -15,7 +15,7 @@ describe('Employee', () => {
             
             const err = new Error("Expected paramater name to exist");
 
-            expect(cb).toThrowError();
+            expect(cb).toThrowError(err);
         });
         it("should throw an error if not provided an ID", () =>{
             const cb = () => new Employee('Peter');
