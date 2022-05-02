@@ -1,6 +1,6 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
-
+const createSite = require('./lib/card');
 const Manager = require('./lib/Manager');
 const Engineer = require('./lib/Engineer');
 const Intern = require('./lib/Intern');
@@ -67,3 +67,25 @@ const Questions = async () => {
                 teamMember.push(intern)
         }
 };
+
+async function furtherQuestions() {
+    await Questions()
+
+    const addMember = await inquirer.prompt([
+        {
+            type: 'list',
+            message: 'Do you want to create a team or add a member?',
+            choices: ['Add a member', 'Create this team'],
+            name: 'addNewMember',
+        }
+    ])
+    if (addMember.addNewMember === 'Add a member') {
+        return furtherQuestions()
+    } return generateTeam();
+}
+
+furtherQuestions();
+
+function generateTeam () {
+    fs.writeFileSync("dist/index.html", )
+}
