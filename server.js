@@ -10,6 +10,12 @@ const teamMember = [];
 const Questions = async () => {
     const Member = await inquirer.prompt([
         {
+          type: "list",
+          message: "Enter team members role.",
+          name: "role",
+          choices: ["Manager", "Engineer", "Intern"],
+        },
+        {
             type: "input",
             message: "Enter team members name.",
             name: "name",
@@ -23,12 +29,6 @@ const Questions = async () => {
             type: "input",
             message: "Enter team members email address.",
             name: "email",
-          },
-          {
-            type: "list",
-            message: "Enter team members role",
-            name: "role",
-            choices: ["Manager", "Engineer", "Intern"],
           },
     ]);
 
@@ -75,11 +75,11 @@ async function furtherQuestions() {
         {
             type: 'list',
             message: 'Do you want to create this team as it is or add another member?',
-            choices: ['Add another member', 'Create this team'],
+            choices: ['Add another member.', 'Create this teams page.'],
             name: 'addNewMember',
         }
     ])
-    if (addMember.addNewMember === 'Add a member') {
+    if (addMember.addNewMember === 'Add another member.') {
         return furtherQuestions()
     } return generateTeam();
 }

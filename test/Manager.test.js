@@ -21,9 +21,9 @@ describe('Manager', () => {
     describe('getRole', () => {
         it('should return the Role of the Manager', () => {
             const thisRole = 'Manager';
-            const Manager = new Manager('Peter', 1, 'peter_jacobs@gmail.com', 5);
+            const manager = new Manager('Peter', 1, 'peter_jacobs@gmail.com', 5);
             
-            const results = Manager.getRole();
+            const results = manager.getRole();
 
             expect(results).toEqual(thisRole);
         });

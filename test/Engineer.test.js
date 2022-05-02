@@ -18,21 +18,22 @@ describe('Engineer', () => {
 
     describe('getGithub', () => {
         it('should return the engineers github', () => {
-            const engineer = new Engineer('Peter', 1, 'peter_jacobs@gmail.com', 'PeterJacobs')
+            const github = 'PeterJacobs'
+            const engineer = new Engineer('Peter', 1, 'peter_jacobs@gmail.com', github)
 
             const myResult = engineer.getGithub();
 
-            expect(myResult).toEqual('PeterJacobs');
+            expect(myResult).toEqual(engineer.github);
         });
     });
     describe('getRole', () => {
         it('should return the Role of the Engineer', () => {
             const thisRole = 'Engineer';
-            const Engineer = new Engineer('Peter', 1, 'peter_jacobs@gmail.com', 'PeterJacobs');
+            const engineer = new Engineer('Peter', 1, 'peter_jacobs@gmail.com', thisRole);
             
             const myResults = Engineer.getRole();
 
-            expect(myResults).toEqual(thisRole);
+            expect(myResults).toEqual(engineer.thisRole);
         });
     });
 });

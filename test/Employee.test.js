@@ -4,21 +4,27 @@ const Employee = require('../lib/Employee');
 describe('Employee', () => {
     describe("init", () => {
         it("should init an employee an object with a name, id and email if provided valid arguments", () =>{
-            const employee = new Employee('Peter', 2, 'peter_jacobs@gmail.com')
-
-            expect(employee.name).toEqual('Peter');
-            expect(employee.id).toEqual(2);
-            expect(employee.email).toEqual('peter_jacobs@gmail.com');
+            const name = 'Peter';
+            const id = 1;
+            const email = "peter_jacobs@gmail.com.au"
+            const employee = new Employee(name, id, email)
+            expect(employee.name).toEqual(name);
+            expect(employee.id).toEqual(id);
+            expect(employee.email).toEqual(email);
         });
-        it("should throw an error if provided no arguments", () =>{
-            const cb = () => new Employee();
+        it("should throw an error if provided an undefined name argument", () =>{
+            const wrongName = undefined;
+            const id = 1
+            const email = "peter_jacobs@gmail.com"
+            const cb = () => new Employee(wrongName, id, email);
             
             const err = new Error("Expected paramater name to exist");
 
             expect(cb).toThrowError(err);
         });
         it("should throw an error if not provided an ID", () =>{
-            const cb = () => new Employee('Peter');
+            const name = 'Peter';
+            const cb = () => new Employee(name);
 
             const err = new Error("Expected ID to be a number above 0");
 
