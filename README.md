@@ -11,18 +11,17 @@
 * [Questions](Questions)
 ---
 ## Description
-
-
+The Team Profile Generator is a node.js application that serves to dynamically create a html page full of your teams information. The information is gathered from your inputs once in the inquirer once the app has been run. A seperate employee card is created for each employee.
 
 ---
 ## Installation
 
-
+This application requires three main packages to run, these are Inquirer, FS and Jest. Running npm install -y in the command line will install these three packages and then this application is ready to use.  
 
 ---
 ## Usage 
 
-
+To begin before actually running this application, tests have been constructed to double check the relevant JavaScript code is not breaking any rules that would render the app obsolete. To see the results of these test, run "npm run test" in the command line, and check all the code is working. If all the tests pass, then you can run "npm start" in the command line, and begin answering the prompts as the inquirer package presents them to you. Once you are finished adding team members you can choose to create the page, this then appends the index.html file in the dist folder with the pre styled cards of each member of your team.
 
 ---
 ## Credits 
