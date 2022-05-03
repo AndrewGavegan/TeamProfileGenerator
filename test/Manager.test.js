@@ -10,14 +10,6 @@ describe('Manager', () => {
         expect(manager.officeNumber).toEqual(officeNumber);
     });
 
-    it('throws an error if officeNumber parameter is not a positive number', () => {
-        const invalidOfficeNumber = -5
-
-        const cb = () => new Manager('Peter', 1, 'peter_jacobs@gmail.com', invalidOfficeNumber);
-
-        expect(cb).toThrow();
-    })
-
     describe('getRole', () => {
         it('should return the Role of the Manager', () => {
             const thisRole = 'Manager';

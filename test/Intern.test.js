@@ -6,18 +6,9 @@ describe('Intern', () => {
         
         const intern = new Intern('Peter', 1, 'peter_jacobs@gmail.com', school);
 
-        expect(intern.school).toEqual(intern.school);
+        expect(intern.school).toEqual(school);
     });
-    it('should create an object of Intern with a parameter of "school" that must be a string', () => {
-        const name = "Peter";
-        const id = 1;
-        const email = "peter@gmail.com";
-        const invalidSchool = 6;
-        const cb = () => new Intern(name, id, email, invalidSchool);
-        const err = "School must be a string";
-        expect(cb).toThrow(err);
-    });
-
+    
     describe('getSchool', () => {
         it('should return the school that the intern attended', () => {
             const school = "University of Sydney"
@@ -25,7 +16,7 @@ describe('Intern', () => {
 
             myResult = intern.getSchool();
 
-            expect(myResult).toEqual(school);
+            expect(myResult).toEqual(intern.school);
         });
     });
     describe('getRole', () => {

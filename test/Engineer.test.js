@@ -8,13 +8,6 @@ describe('Engineer', () => {
 
         expect(engineer.github).toEqual(github);
     });
-    it('should throw an error if the github parameter is not a string', () => {
-        const invalidGithub = 2
-
-        const cb = () => new Engineer('Peter', 1, 'peter_jacobs@gmail.com', invalidGithub)
-
-        expect(cb).toThrow();
-    });
 
     describe('getGithub', () => {
         it('should return the engineers github', () => {
@@ -29,11 +22,11 @@ describe('Engineer', () => {
     describe('getRole', () => {
         it('should return the Role of the Engineer', () => {
             const thisRole = 'Engineer';
-            const engineer = new Engineer('Peter', 1, 'peter_jacobs@gmail.com', thisRole);
+            const engineer = new Engineer('Peter', 1, 'peter_jacobs@gmail.com', 'PeterJacobs');
             
-            const myResults = Engineer.getRole();
+            const results = engineer.getRole();
 
-            expect(myResults).toEqual(engineer.thisRole);
+            expect(results).toEqual(thisRole);
         });
     });
 });
